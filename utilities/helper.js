@@ -68,7 +68,7 @@ export const updateTodoStatus = async(todo , isComplete) => {
     }
 }
 
-//  updating the todo 
+//  updating the todo task
 export const updateTodoText = async(todo ) => {
     try {
         const result = await axios.put(`/${todo.id}`,   {
