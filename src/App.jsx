@@ -103,6 +103,8 @@ const App = () => {
     clearHandler()
   }
 
+
+
   return (
     <div className='flex justify-center items-center py-4 min-h-screen flex-col bg-background-theme'>
       <div className='max-w-[650px] w-[90%]'>
@@ -114,7 +116,7 @@ const App = () => {
           <input ref={inputRef} placeholder='Enter your todos' value={inputText} onChange={(e) => setInputText(e.target.value)} className='w-full py-3 text-xl pr-2 rounded-br-md rounded-tr-md  outline-none' onKeyDown={inputHandler} />
         </div>
 
-
+        {/* Rendering the RenderCard component  */}
         <RenderCard todos={todos} state={state} setTodos={setTodos} clearButtonRef={clearButtonRef} markAllButtonRef={markAllButtonRef} />
 
         

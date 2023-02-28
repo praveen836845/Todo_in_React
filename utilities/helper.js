@@ -49,7 +49,7 @@ export const deleteTodo = async(id) => {
     }
 }
 
-
+// update the status of todo : 
 export const updateTodoStatus = async(todo , isComplete) => {
     try {
         const result = await axios.put(`/${todo.id}`,   {

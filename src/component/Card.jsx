@@ -24,7 +24,7 @@ const Card = ({todo, setTodos ,clearButtonRef ,markAllButtonRef}) => {
         })
     }
 
-    //   status will be updated 
+    
     const updateHandler = async() => {
         buttonRef.current.disabled = true;
         cardRef.current.classList.add("opacity-70")
