@@ -24,6 +24,7 @@ const Card = ({todo, setTodos ,clearButtonRef ,markAllButtonRef}) => {
         })
     }
 
+    //   status will be updated 
     const updateHandler = async() => {
         buttonRef.current.disabled = true;
         cardRef.current.classList.add("opacity-70")
@@ -43,6 +44,7 @@ const Card = ({todo, setTodos ,clearButtonRef ,markAllButtonRef}) => {
         
     }
 
+    //   Update the task 
     const updateTextHelper = async () => {
         todo.title = text;
         await updateTodoText(todo);
@@ -52,6 +54,9 @@ const Card = ({todo, setTodos ,clearButtonRef ,markAllButtonRef}) => {
             return [...prev]
         })
     }
+
+
+ 
     const blurHandler =() => {
         setEdit(false)
         updateTextHelper()
@@ -63,7 +68,7 @@ const Card = ({todo, setTodos ,clearButtonRef ,markAllButtonRef}) => {
             setEdit(false)
         }
     }
-
+ 
 
   return (
     <div ref={cardRef} className={`group w-full border-b-2 flex pr-5 justify-between border-b-gray-100 ${isComplete && 'bg-gray-100'} gap-4`}>

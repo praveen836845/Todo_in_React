@@ -57,6 +57,8 @@ const App = () => {
       }
   }
 
+
+//  Extra feature which makes all todo item completed 
   const markAllCompletedHandler = async () => {
 
 
@@ -74,6 +76,7 @@ const App = () => {
   }
 
 
+   // Remove all the todo only one click  
   const removeAllCompletedHandler = async () => {
 
   // Clear all the completed Todo's

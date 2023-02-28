@@ -1,7 +1,9 @@
 import axios from '../axios.config'
 
+//  adding the text  
 export const addTodo = async (text) => {
 
+    console.log("text " , text);
     try {
         const result = await axios.post("/" ,   {
             body: JSON.stringify({
@@ -16,7 +18,7 @@ export const addTodo = async (text) => {
         })
         console.log(JSON.parse(result?.data?.body) , "adada")
 
-        return JSON.parse(result?.data?.body);
+        return JSON.parse(result?.data?.body);  
 
 
     } catch (error) {
@@ -25,6 +27,7 @@ export const addTodo = async (text) => {
     
 }
 
+//  get  the list of todo from the api 
 export const getTodo = async () => {
     try {
         const result = await axios.get("/");
@@ -35,6 +38,7 @@ export const getTodo = async () => {
     }
 }
 
+//  delete from the todo 
 export const deleteTodo = async(id) => {
     try {
         const result = await axios.delete(`/${id}`)
@@ -44,6 +48,7 @@ export const deleteTodo = async(id) => {
         console.error(error)
     }
 }
+
 
 export const updateTodoStatus = async(todo , isComplete) => {
     try {
@@ -63,6 +68,7 @@ export const updateTodoStatus = async(todo , isComplete) => {
     }
 }
 
+//  updating the todo 
 export const updateTodoText = async(todo ) => {
     try {
         const result = await axios.put(`/${todo.id}`,   {
@@ -71,7 +77,7 @@ export const updateTodoText = async(todo ) => {
                 'Content-type': 'application/json; charset=UTF-8',
             }
         })
-        // console.log(result)
+        console.log( "result ",result)
         return JSON.parse(result?.data?.body);
     } catch (error) {
         console.error(error)    
